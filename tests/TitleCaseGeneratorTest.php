@@ -4,6 +4,16 @@
 
     class TitleCaseGeneratorTest extends PHPUnit_Framework_TestCase
     {
+        function test_makeTitleCase_allLower()
+        {
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "ALL UPPER";
+
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            $this->assertEquals("All Upper", $result);
+        }
+        
         function test_makeTitleCase_oneWord()
         {
 
@@ -54,5 +64,6 @@
 
             $this->assertEquals("2001 A Space Odyssey", $result);
         }
+
     }
 ?>

@@ -4,7 +4,8 @@
     {
         function makeTitleCase($input_title)
         {
-            $input_array_of_words = explode(" ", $input_title);
+            $lower_case_input = strtolower($input_title);
+            $input_array_of_words = explode(" ", $lower_case_input);
             $output_titlecased = array();
             $designated_words = array('a');
 
@@ -21,12 +22,8 @@
             $output_titlecased[0] = ucfirst($output_titlecased[0]);
 
             if (is_numeric($output_titlecased[0])) {
-                // var_dump($output_titlecased[1]);
                 $output_titlecased[1] = ucfirst($output_titlecased[1]);
             }
-
-
-
 
             return implode(" ", $output_titlecased);
         }
