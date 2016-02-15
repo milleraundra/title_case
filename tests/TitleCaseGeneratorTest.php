@@ -24,5 +24,35 @@
 
             $this->assertEquals("The Little Mermaid", $result);
         }
+
+        function test_makeTitleCase_notDesignatedWords()
+        {
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "to kill a mockingbird";
+
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            $this->assertEquals("To Kill a Mockingbird", $result);
+        }
+
+        function test_makeTitleCase_firstWordUppercase ()
+        {
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "a shooting star";
+
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            $this->assertEquals("A Shooting Star", $result);
+        }
+
+        function test_makeTitleCase_firstWordInteger()
+        {
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "2001 a space odyssey";
+
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            $this->assertEquals("2001 A Space Odyssey", $result);
+        }
     }
 ?>
